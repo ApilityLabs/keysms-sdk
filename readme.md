@@ -27,7 +27,7 @@ Supports the following arguments:
 * `time`        A timestamp in the future to send at. Defaults to now
 * `date`        A date in the future to send at. Defaults to today
 
-'''curl -XPOST http://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"'''
+> curl -XPOST http://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"
 
 #### Errors
 The following errors may be returned
@@ -43,7 +43,7 @@ Supports the following arguments:
 * `aliases`     bool Return aliases
 * `keywords`    bool Return keywords
 
-'''curl -XPOST http://app.keysms.no/messages -d user=1 -d account=0 -d groups=1 -d signature="foo" -d username="bar"'''
+> curl -XPOST http://app.keysms.no/messages -d user=1 -d account=0 -d groups=1 -d signature="foo" -d username="bar"
 
 ## PHP Client
 You can find the PHP client here
