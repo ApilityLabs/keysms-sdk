@@ -25,7 +25,7 @@ Supports the following arguments:
 - `time`        A timestamp in the future to send at. If `date` is not set defaults to today
 - `date`        A date in the future to send at. If `time` is not set, defaults to now
 
-curl -XPOST http://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"
+'''curl -XPOST http://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"'''
 
 #### Errors
 The following errors may be returned
@@ -39,7 +39,7 @@ Supports the following arguments:
 - `aliases`     * bool Return aliases
 - `keywords`    * bool Return keywords
 
-curl -XPOST http://app.keysms.no/messages -d user=1 -d account=0 -d groups=1 -d signature="foo" -d username="bar"
+'''curl -XPOST http://app.keysms.no/messages -d user=1 -d account=0 -d groups=1 -d signature="foo" -d username="bar"'''
 
 ## PHP Client
 You can find the PHP client here
@@ -53,43 +53,43 @@ You can find the PHP client here
     $response = $keysms->sms($message, $receiver);
 
 This produces output along the lines of :
-Array
-(
-    [message] => Array
-        (
-            [sent] => 1
-            [updated] => 1298561868
-            [parts] => Array
-                (
-                    [total] => 1
-                    [parts] => Array
-                        (
-                            [0] => Heisann
-                        )
+    Array
+    (
+        [message] => Array
+            (
+                [sent] => 1
+                [updated] => 1298561868
+                [parts] => Array
+                    (
+                        [total] => 1
+                        [parts] => Array
+                            (
+                                [0] => Heisann
+                            )
 
-                )
+                    )
 
-            [_id] => 4d667b4cc3b3990742000006
-            [created] => 1298561868
-            [receivers] => Array
-                (
-                    [0] => Array
-                        (
-                            [number] => 90640936
-                            [created] => 1298561868
-                            [modified] => 
-                            [status] => 0
-                            [smsoutid] => 7717266
-                        )
+                [_id] => 4d667b4cc3b3990742000006
+                [created] => 1298561868
+                [receivers] => Array
+                    (
+                        [0] => Array
+                            (
+                                [number] => 90640936
+                                [created] => 1298561868
+                                [modified] => 
+                                [status] => 0
+                                [smsoutid] => 7717266
+                            )
 
-                )
+                    )
 
-            [message] => Heisann
-            [sender] => 90640936
-            [timed] => 
-        )
+                [message] => Heisann
+                [sender] => 90640936
+                [timed] => 
+            )
 
-)
+    )
 
 ### Get account information
 
@@ -99,23 +99,23 @@ Array
 
 Output can be very hefty, you are advised to inspect the output yourself to make sure
 Produces :
-array(
-    'aliases' => array(
-        array(
-            'name' => '99999999', // String, either a number or a name
-            'validated' => bool,
-            'default' => bool
-        )
-    ),
-    'account' => array(
-        'name' => 'Account name',
-        'sms' => array(
-            max => 10000, // Upper limit of sms / month for this account
-            sent => 500, // How many sent this month
-            price => 0.39, // Price pr sms in NOK
-            cost => 3900 // Total cost of sent smses
-        )
+    array(
+        'aliases' => array(
+            array(
+                'name' => '99999999', // String, either a number or a name
+                'validated' => bool,
+                'default' => bool
+            )
+        ),
+        'account' => array(
+            'name' => 'Account name',
+            'sms' => array(
+                max => 10000, // Upper limit of sms / month for this account
+                sent => 500, // How many sent this month
+                price => 0.39, // Price pr sms in NOK
+                cost => 3900 // Total cost of sent smses
+            )
+            ....
+        ),
         ....
-    ),
-    ....
-)
+    )
