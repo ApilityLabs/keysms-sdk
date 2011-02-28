@@ -24,8 +24,8 @@ Supports the following arguments:
 * `message`     _*_ UTF-8 encoded message
 * `receivers`   _*_ Array of receivers
 * `sender`      _*_ Which of the accounts receivers to send from
-* `time`        A timestamp in the future to send at. If `date` is not set defaults to today
-* `date`        A date in the future to send at. If `time` is not set, defaults to now
+* `time`        A timestamp in the future to send at. Defaults to now
+* `date`        A date in the future to send at. Defaults to today
 
 '''curl -XPOST http://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"'''
 
