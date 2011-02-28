@@ -19,11 +19,11 @@ The following straight forward PHP code describes the required post data:
 
 ### Send message (POST /messages)
 Supports the following arguments:
-- `message`     * UTF-8 encoded message
-- `receivers`   * Array of receivers
-- `sender`      * Which of the accounts receivers to send from
-- `time`        A timestamp in the future to send at. If `date` is not set defaults to today
-- `date`        A date in the future to send at. If `time` is not set, defaults to now
+*  `message`     _*_ UTF-8 encoded message
+*  `receivers`   _*_ Array of receivers
+*  `sender`      _*_ Which of the accounts receivers to send from
+*  `time`        A timestamp in the future to send at. If `date` is not set defaults to today
+*  `date`        A date in the future to send at. If `time` is not set, defaults to now
 
 '''curl -XPOST http://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"'''
 
@@ -32,12 +32,12 @@ The following errors may be returned
 
 ### Get account info (GET /auth/current)
 Supports the following arguments:
-- `user`        * bool Return information about logged in user
-- `account`     * bool Return information about account for logged in user
-- `contacts`    * bool Return the _full_ contact list
-- `groups`      * bool Return groups
-- `aliases`     * bool Return aliases
-- `keywords`    * bool Return keywords
+*  `user`        bool Return information about logged in user
+*  `account`     bool Return information about account for logged in user
+*  `contacts`    bool Return the _full_ contact list
+*  `groups`      bool Return groups
+*  `aliases`     bool Return aliases
+*  `keywords`    bool Return keywords
 
 '''curl -XPOST http://app.keysms.no/messages -d user=1 -d account=0 -d groups=1 -d signature="foo" -d username="bar"'''
 
