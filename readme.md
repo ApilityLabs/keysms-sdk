@@ -10,7 +10,7 @@ The following straight forward PHP code describes the required post data:
 
     $payload = json_encode($payloadArray);
     $postFields = array(
-        'signature' => md5($payload),
+        'signature' => md5($payload . $secretKey),
         'username' => $username,
         'payload' => $payload
     );
