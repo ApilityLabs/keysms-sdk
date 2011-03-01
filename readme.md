@@ -62,7 +62,8 @@ This produces output along the lines of :
         [message] => Array
             (
                 [sent] => 1
-                [updated] => 1298561868
+                [created] => "2011-03-01 10:00:00"
+                [updated] => "2011-03-01 10:00:00"
                 [parts] => Array
                     (
                         [total] => 1
@@ -74,7 +75,6 @@ This produces output along the lines of :
                     )
 
                 [_id] => 4d667b4cc3b3990742000006
-                [created] => 1298561868
                 [receivers] => Array
                     (
                         [0] => Array
