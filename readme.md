@@ -80,16 +80,12 @@ This produces output along the lines of :
                         [0] => Array
                             (
                                 [number] => 90640936
-                                [created] => 1298561868
-                                [modified] => 
-                                [status] => 0
-                                [smsoutid] => 7717266
                             )
 
                     )
 
-                [message] => Heisann
-                [sender] => 90640936
+                [message] => "SMS to myself"
+                [sender] => "90640936"
                 [timed] => 
             )
 
