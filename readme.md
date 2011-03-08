@@ -49,4 +49,4 @@ Supports the following arguments:
 
 * [PHP Documentation][php]
 
-[php]: /KeyteqLabs/KeySMS/tree/master/PHP/readme.md "PHP Documentation"
+[php]: /KeyteqLabs/KeySMS/tree/master/PHP/ "PHP Documentation"
