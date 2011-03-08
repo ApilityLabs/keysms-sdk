@@ -1,6 +1,6 @@
 ## PHP Client
 You can find the PHP client here
-Read the [l](/KeyteqLabs/KeySMS/tree/master/readme.md "HTTP Documentation")
+Read the [HTTP Documentation](/KeyteqLabs/KeySMS/tree/master/readme.md "HTTP Documentation")
 
 ### Send message
 

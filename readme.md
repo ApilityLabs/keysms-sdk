@@ -46,6 +46,7 @@ Supports the following arguments:
 > curl -XPOST http://app.keysms.no/messages -d user=1 -d account=0 -d groups=1 -d signature="foo" -d username="bar"
 
 ## Clients
-[l][php]
+
+* [PHP Documentation][php]
 
 [php]: /KeyteqLabs/KeySMS/tree/master/PHP/readme.md "PHP Documentation"
