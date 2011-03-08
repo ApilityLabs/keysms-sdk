@@ -67,13 +67,18 @@ class KeySMS
      */
     public function sms($message, $receivers, array $options = array())
     {
+        $options += array(
+            'format' => 'array'
+        );
+        $format = $options['format'];
+        unset($options['format']);
         if (!is_array($receivers))
             $receivers = array($receivers);
         $payload = compact('receivers', 'message');
         $payload += $options;
 
         $response = $this->_call('/messages', 'POST', $payload);
-        return $response;
+        return $this->cast($response, $format);
     }
 
     /**
@@ -83,15 +88,20 @@ class KeySMS
      * @param array $fields Undocumented
      * @return array Response information
      */
-    public function info(array $fields = array())
+    public function info(array $fields = array(), array $options = array())
     {
+        $options += array(
+            'format' => 'array'
+        );
         $fields += array(
             'user' => true,
             'account' => true,
         );
+        $format = $options['format'];
+        unset($options['format']);
 
         $response = $this->_call('/auth/current.json', 'POST', $fields);
-        return $response;
+        return $this->cast($response, $format);
     }
 
     /**
@@ -126,7 +136,7 @@ class KeySMS
 
         $data = curl_exec($conn);
         if ($data !== false)
-            return json_decode($data, true);
+            return $data;
         else
         {
             /**
@@ -174,5 +184,25 @@ class KeySMS
     {
         $payload = json_encode($payload);
         return md5($payload . $this->_options['auth']['apiKey']);
+    }
+
+    /**
+     * Cast the raw data into any given data structure
+     * @param string $data
+     * @param string $format
+     * @return mixed
+     */
+    protected function cast($data, $format)
+    {
+        switch ($format)
+        {
+        case 'array':
+            return json_decode($data, true);
+        case 'object':
+            return json_decode($data);
+        case 'json':
+        default:
+            return $data;
+        }
     }
 }
