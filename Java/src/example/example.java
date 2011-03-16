@@ -14,7 +14,7 @@ public class example {
 	{
 		//Instansiate variables
 		String userName 	= "98800000";							// Username used to authenicate with 
-		String apiKey		= "79e7e90aeeb9db0e2db4f7e4a6430f07";	// API key. Key is obtained through «Min side» at app.keysms.no
+		String apiKey		= "7912390aeeb9db0e2db4f7e4a6430f07";	// API key. Key is obtained through "Min side" at app.keysms.no
 		String message 		= "SMS to myself";
 		String[] recievers 	= {"98855555"};  
 		//String[] recievers 	= {"98800000", "98800001"};			Could be several receivers : 
