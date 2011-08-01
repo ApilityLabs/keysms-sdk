@@ -16,4 +16,4 @@ You can find the C# client at https://github.com/KeyteqLabs/KeySMS
 		    keySms.auth(userName, apiKey);		 			                // Define what user to authenticate with.
 		    SMSResponse response = keySms.sms(message, reciever, options);	// Send SMS to recievers. Returnes response from server. Date and time are optional.  		
 		
-Output is parsed to a container-class.
+Output is parsed to a container-class which can be accessed in the following manner: Boolean status = response.ok; (transaction status).
