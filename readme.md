@@ -50,3 +50,5 @@ Supports the following arguments:
 * [PHP Documentation][php]
 
 [php]: /KeyteqLabs/KeySMS/tree/master/PHP/ "PHP Documentation"
+[C#]: /KeyteqLabs/KeySMS/tree/master/C#/ "C# Documentation"
+[Java]: /KeyteqLabs/KeySMS/tree/master/Java/ "Java Documentation"
