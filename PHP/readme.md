@@ -5,6 +5,7 @@ Read the [HTTP Documentation](/KeyteqLabs/KeySMS/tree/master/readme.md "HTTP Doc
 ### Send message
 
 ``` php
+<?php
 $keysms = new KeySMS;
 $keysms->auth($username, $apiKey);
 $message = "SMS to myself";
@@ -50,6 +51,7 @@ This produces output along the lines of :
 ### Get account information
 
 ``` php
+<?php
 // See supported argumentsfor GET call
 $fields = array('users' => true, 'account' => true, 'keywords' => false);
 print_r($keysms->info($fields));
