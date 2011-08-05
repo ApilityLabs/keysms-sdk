@@ -3,18 +3,20 @@ You can find the Java client at https://github.com/KeyteqLabs/KeySMS
 
 ### Send message
 
-    String userName     = "98800000"; // Username used to authenicate with
-    String apiKey       = "..."; // API key. Key is obtained through "Min side" at app.keysms.no
-    String message      = "SMS to myself";
-    String[] recievers  = {"98855555"}; // Could be several receivers ({"98800000",.....,"91555555"})
-    String date         = "2011-03-10"; // If prior to todays date - assumes date == today.
-    String time         = "16:00"; // Time converted downwards to nearest quarter. eg 14:41 => 14:30
+``` java
+String userName     = "98800000"; // Username used to authenicate with
+String apiKey       = "..."; // API key. Key is obtained through "Min side" at app.keysms.no
+String message      = "SMS to myself";
+String[] recievers  = {"98855555"}; // Could be several receivers ({"98800000",.....,"91555555"})
+String date         = "2011-03-10"; // If prior to todays date - assumes date == today.
+String time         = "16:00"; // Time converted downwards to nearest quarter. eg 14:41 => 14:30
 
-    // Instantiate KeySMS client and send SMS
-    KeySMS keySms = new KeySMS();
-    keySms.auth(userName, apiKey); // Define what user to authenticate with.
-    Object response = keySms.sms(message, recievers, date, time); // Send SMS to recievers. Returnes response from server. Date and time are optional.
-    System.out.println(response);
+// Instantiate KeySMS client and send SMS
+KeySMS keySms = new KeySMS();
+keySms.auth(userName, apiKey); // Define what user to authenticate with.
+Object response = keySms.sms(message, recievers, date, time); // Send SMS to recievers. Returnes response from server. Date and time are optional.
+System.out.println(response);
+```
 
 This produces output along the lines of :
     {"ok":true,"message":{"sent":true,"updated":"2011-03-16 12:02:29","parts":{"total":1,"parts":["SMS to myself"]},
