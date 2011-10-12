@@ -6,13 +6,11 @@ using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
-using System.Reflection;
 using System.Runtime.Serialization;
-using System.Security.Permissions;
 
-namespace KeySMSAPI
+namespace KeySMSLibrary
 {    
-    class KeySMS
+    public class KeySMS
     {
         protected const String messageUri = "http://app.keysms.no/messages";
         protected const String infoUri = "http://app.keysms.no/auth/current.json";        

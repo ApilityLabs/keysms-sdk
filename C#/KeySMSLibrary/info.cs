@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using KeySMSAPI.Models;
+using KeySMSLibrary.Models;
 
-namespace KeySMSAPI
+namespace KeySMSLibrary
 {
     [Serializable, DataContract]
-    class Info
+    public class Info
     {
         [DataMember]
         public Account account { get; set;  }
@@ -16,10 +16,10 @@ namespace KeySMSAPI
     }
 }
 
-namespace KeySMSAPI.Models
+namespace KeySMSLibrary.Models
 {
     [Serializable, DataContract]
-    class Account
+    public class Account
     {
         [DataMember]
         public String admin { get; set;  }
@@ -44,14 +44,14 @@ namespace KeySMSAPI.Models
     }
 
     [Serializable, DataContract]
-    class Sms
+    public class Sms
     {
         [DataMember]
         public Double max { get; set;  }        
     }
 
     [Serializable, DataContract]
-    class Address
+    public class Address
     {
         [DataMember]
         public String place { get; set;  }
@@ -62,7 +62,7 @@ namespace KeySMSAPI.Models
     }
 
     [Serializable, DataContract]
-    class User
+    public class User
     {
         [DataMember]
         public String access { get; set; }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using KeySMSAPI.Models;
+using KeySMSLibrary.Models;
 
-namespace KeySMSAPI
+namespace KeySMSLibrary
 {
     [Serializable, DataContract]
-    class SMSResponse
+    public class SMSResponse
     {
         [DataMember]
         public Boolean ok { get; set; }
@@ -20,10 +20,10 @@ namespace KeySMSAPI
     }
 }
 
-namespace KeySMSAPI.Models
+namespace KeySMSLibrary.Models
 {
     [Serializable, DataContract]
-    class Message
+    public class Message
     {
         [DataMember]
         public Boolean sent { get; set; }
@@ -50,7 +50,7 @@ namespace KeySMSAPI.Models
     }
 
     [Serializable, DataContract]
-    class Receiver
+    public class Receiver
     {
         [DataMember]
         public String number { get; set; }
@@ -65,7 +65,7 @@ namespace KeySMSAPI.Models
     }
 
     [Serializable, DataContract]
-    class Parts
+    public class Parts
     {
         [DataMember]
         public Int32 total { get; set; }
@@ -74,7 +74,7 @@ namespace KeySMSAPI.Models
     }
 
     [Serializable, DataContract]
-    class Status
+    public class Status
     {
         [DataMember]
         public String value { get; set; }
