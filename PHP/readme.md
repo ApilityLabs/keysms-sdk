@@ -4,11 +4,14 @@ Read the [HTTP Documentation](/KeyteqLabs/KeySMS/tree/master/readme.md "HTTP Doc
 
 ### Send message
 
-    $keysms = new KeySMS;
-    $keysms->auth($username, $apiKey);
-    $message = "SMS to myself";
-    $receiver = "90640936"; // Could be several receivers : array($num, $num2, .., $numN)
-    $response = $keysms->sms($message, $receiver);
+``` php
+<?php
+$keysms = new KeySMS;
+$keysms->auth($username, $apiKey);
+$message = "SMS to myself";
+$receiver = "90640936"; // Could be several receivers : array($num, $num2, .., $numN)
+$response = $keysms->sms($message, $receiver);
+```
 
 This produces output along the lines of :
     Array
@@ -47,9 +50,12 @@ This produces output along the lines of :
 
 ### Get account information
 
-    // See supported argumentsfor GET call
-    $fields = array('users' => true, 'account' => true, 'keywords' => false);
-    print_r($keysms->info($fields));
+``` php
+<?php
+// See supported argumentsfor GET call
+$fields = array('users' => true, 'account' => true, 'keywords' => false);
+print_r($keysms->info($fields));
+```
 
 Output can be very hefty, you are advised to inspect the output yourself to make sure
 Produces :

@@ -48,5 +48,9 @@ Supports the following arguments:
 ## Clients
 
 * [PHP Documentation][php]
+* [C# Documentation][c#]
+* [Java Documentation][Java]
 
 [php]: /KeyteqLabs/KeySMS/tree/master/PHP/ "PHP Documentation"
+[C#]: /KeyteqLabs/KeySMS/tree/master/C%23/ "C# Documentation"
+[Java]: /KeyteqLabs/KeySMS/tree/master/Java/ "Java Documentation"
