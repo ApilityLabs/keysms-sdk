@@ -25,6 +25,8 @@ namespace KeySMSLibrary.Models
     [Serializable, DataContract]
     public class Message
     {
+        [DataMember(Name = "_id")]
+        public String id { get; set; }
         [DataMember]
         public Boolean sent { get; set; }
         [DataMember]
