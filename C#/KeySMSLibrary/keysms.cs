@@ -13,7 +13,7 @@ namespace KeySMSLibrary
     public class KeySMS
     {
         protected const String messageUri = "http://app.keysms.no/messages";
-        protected const String infoUri = "http://app.keysms.no/auth/current.json";        
+        protected const String infoUri = "http://app.keysms.no/auth/current.json";
 
         protected String username;
         protected String APIKey;        
