@@ -7,6 +7,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Runtime.Serialization;
+using System.Web;
 
 namespace KeySMSLibrary
 {    
@@ -117,17 +118,14 @@ namespace KeySMSLibrary
 
         protected string md5(String text)
         {
-            byte[] textBytes = Encoding.UTF8.GetBytes(text);
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            byte[] md5Bytes = md5.ComputeHash(Encoding.UTF8.GetBytes(text));
+            
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < md5Bytes.Length; i++)
+                stringBuilder.AppendFormat("{0:x2}", md5Bytes[i]);
 
-            MD5CryptoServiceProvider cryptHandler = new MD5CryptoServiceProvider();
-
-            byte[] hash = cryptHandler.ComputeHash(textBytes);
-
-            string signature = "";
-
-            foreach (byte a in hash) signature += a.ToString("x2");
- 
-            return signature;
+            return stringBuilder.ToString();
         }
 
         protected String call(String uri, String payload)
@@ -136,7 +134,8 @@ namespace KeySMSLibrary
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 
-            String parameterString = "payload=" + payload + "&signature=" + sign(payload) + "&username=" + username;            
+            String parameterString = "payload=" + HttpUtility.UrlEncode(payload) + "&signature=" + sign(payload) + "&username=" + HttpUtility.UrlEncode(username);
+            
             byte[] byteArray = Encoding.UTF8.GetBytes(parameterString);
             request.ContentLength = byteArray.Length;
                                                 
