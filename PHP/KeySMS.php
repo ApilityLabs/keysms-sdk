@@ -27,13 +27,15 @@ class KeySMS
 {
 
     const TIMEOUT = 30;
-    const PORT = 80;
 
     /**
      * API options
      * @var array
      */
-    protected $_options = array();
+    protected $_options = array(
+        'host' => 'app.keysms.no',
+        'scheme' => 'https'
+    );
 
     /**
      * Constructor, defines what address to connect to and other options
@@ -41,11 +43,7 @@ class KeySMS
      */
     public function __construct(array $options = array())
     {
-        $options += array(
-            'host' => 'app.keysms.no',
-            'scheme' => 'http'
-        );
-        $this->_options = $options;
+        $this->_options = $options + $this->_options;
     }
 
     /**
@@ -123,7 +121,7 @@ class KeySMS
 
         curl_setopt($conn, CURLOPT_URL, $requestURL);
         curl_setopt($conn, CURLOPT_TIMEOUT, self::TIMEOUT);
-        curl_setopt($conn, CURLOPT_PORT, self::PORT);
+        curl_setopt($conn, CURLOPT_PORT, $this->getPort());
         curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1) ;
 
         curl_setopt($conn, CURLOPT_CUSTOMREQUEST, strtoupper($method));
@@ -204,5 +202,14 @@ class KeySMS
         default:
             return $data;
         }
+    }
+
+    /**
+     * Get port to use for this connection
+     * @return int
+     */
+    protected function getPort()
+    {
+        return $this->_options['scheme'] === 'https' ? 443 : 80;
     }
 }
