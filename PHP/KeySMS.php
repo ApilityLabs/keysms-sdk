@@ -103,6 +103,28 @@ class KeySMS
     }
 
     /**
+     * Delete a message that is scheduled for the future
+     *
+     * @param $id
+     * @param array $options
+     * @return mixed
+     */
+    public function deleteMessage($id, array $options = array())
+    {
+        $options += array(
+            'format' => 'array'
+        );
+        $format = $options['format'];
+        unset($options['format']);
+
+        $payload = array('_id' => $id);
+        $payload += $options;
+
+        $response = $this->_call('/messages/destroy/' . $id, 'POST', $payload);
+        return $this->cast($response, $format);
+    }
+
+    /**
      * Abstracts making HTTP calls through curl
      *
      * @param string $url Relative url to api host (/messages) 
@@ -122,7 +144,7 @@ class KeySMS
         curl_setopt($conn, CURLOPT_URL, $requestURL);
         curl_setopt($conn, CURLOPT_TIMEOUT, self::TIMEOUT);
         curl_setopt($conn, CURLOPT_PORT, $this->getPort());
-        curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1) ;
+        curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1);
 
         curl_setopt($conn, CURLOPT_CUSTOMREQUEST, strtoupper($method));
 
