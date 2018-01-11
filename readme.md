@@ -51,6 +51,6 @@ Supports the following arguments:
 * [C# Documentation][c#]
 * [Java Documentation][Java]
 
-[php]: /KeyteqLabs/keysms-sdk/tree/master/PHP "PHP Documentation"
-[C#]: /KeyteqLabs/keysms-sdk/tree/master/C%23/ "C# Documentation"
-[Java]: /KeyteqLabs/keysms-sdk/tree/master/Java/ "Java Documentation"
+[php]: /PHP "PHP Documentation"
+[C#]: /C%23/ "C# Documentation"
+[Java]: /Java/ "Java Documentation"
