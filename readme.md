@@ -27,7 +27,7 @@ Supports the following arguments:
 * `time` A timestamp in the future to send at. Defaults to now
 * `date` A date in the future to send at. Defaults to today
 
-> curl -XPOST https://app.keysms.no/messages -d payload='{message:"Hello world", receivers:["99999999"]}' -d signature="your generated sign key" -d username="me"
+> curl -XPOST https://app.keysms.no/messages -d payload='{"message":"Hello world", "receivers":["99999999"]}' -d signature="your generated sign key" -d username="me"
 
 #### Errors
 The following errors may be returned
